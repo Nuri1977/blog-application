@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'Users', type: :request do
+RSpec.describe 'Posts', type: :request do
   describe 'GET #index' do
     before(:each) do
-      get '/users'
+      get '/users/0/posts'
     end
 
     it 'GET requests response status was correct' do
@@ -15,12 +15,12 @@ RSpec.describe 'Users', type: :request do
     end
 
     it 'response body includes correct placeholder text' do
-      expect(response.body).to include('Welcome to Users page')
+      expect(response.body).to include('Welocme to posts page')
     end
 
     describe 'GET #show' do
       before(:each) do
-        get '/users/1'
+        get '/users/1/posts/1'
       end
 
       it 'GET requests response status was correct' do
@@ -32,7 +32,7 @@ RSpec.describe 'Users', type: :request do
       end
 
       it 'renders content correctly' do
-        expect(response.body).to include('Welcome to user show page')
+        expect(response.body).to include('Welcome to show page')
       end
     end
   end
