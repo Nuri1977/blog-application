@@ -5,7 +5,7 @@ class Like < ApplicationRecord
   belongs_to :post
 
   private
-  
+
   def increment_likes_counter
     post.increment!(:likes_counter)
   end
