@@ -1,7 +1,15 @@
-<h1>Welcome to Users page</h1>
+<h1 class="users-title">Welcome to Users page</h1>
 
 <% @users.each do |user|%>
-  <h1><%= user.photo %></h1>
-  <h1><%= user.name %></h1>
-  <h1><%= user.posts_counter %></h1>
+  <div class="card flex">
+    <div class="user-image border">
+      <img src=<%= user.photo %> alt="" width="100%" heigth="100%">
+    </div>
+    <div class="user-data border">
+      <h1><%= user.name %></h1>
+      <p class="number-posts">Number of posts: <%= user.posts_counter %></p>
+    </div>
+
+  </div>
+
 <% end %>
