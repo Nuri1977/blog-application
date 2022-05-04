@@ -14,7 +14,7 @@
  *= require_self
  */
 
- @import url('https://fonts.googleapis.com/css2?family=Lato');
+@import url('https://fonts.googleapis.com/css2?family=Lato');
 
 * {
   box-sizing: border-box;
@@ -75,7 +75,7 @@ a {
 .card {
   padding: 10px;
   margin: 10px 0;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   transition: 0.3s;
 }
 
@@ -122,4 +122,3 @@ a {
 .commets-container {
   padding: 10px;
 }
-
