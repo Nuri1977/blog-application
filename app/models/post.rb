@@ -1,5 +1,5 @@
 class Post < ApplicationRecord
-  after_save :increment_post_counter
+  after_save :increment_posts_counter
 
   belongs_to :author, class_name: 'User', foreign_key: 'author_id'
   has_many :likes
