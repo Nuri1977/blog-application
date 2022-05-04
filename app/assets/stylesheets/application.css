@@ -87,6 +87,10 @@ a {
   display: flex;
 }
 
+.justify-end {
+  justify-content: flex-end;
+}
+
 .user-image {
   max-width: 120px;
   margin: 10px;
