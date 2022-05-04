@@ -1,9 +1,17 @@
 <h1>Welcome to show page</h1>
 
 <section class="card left">
+
   <div class="card">
     <h2><%= @post.title %></h2>
     <p><%= @post.text %></p>
+    <div class="right">
+      <span>Comments: <%= @post.comments_counter %></span>
+      <span>Likes: <%= @post.likes_counter %> </span>
+    </div>
+    <div class="right my-1">
+      <%= link_to "Add comment", new_user_post_comment_path(user_id: @post.author_id, post_id: @post.id ), class: "btn" %>
+    </div>
   </div>
   <div class="commets-container">
     <h4>Comments:</h4>
@@ -12,6 +20,9 @@
         <p><%= comment.author.name %>: <%= comment.text %></p>
       <% end %>
     </ul>
+  </div>
+  <div class="center">
+    <%= link_to "Back to posts", user_path(id: @post.author_id), class: "btn my-1" %>
   </div>
 
 </section>
