@@ -18,7 +18,7 @@ RSpec.describe Like, type: :model do
       expect(@like).to_not be_valid
     end
 
-    it 'comment must be present' do
+    it 'like must be present' do
       expect(@post.likes.length).to eq 1
     end
   end

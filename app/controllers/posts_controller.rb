@@ -18,6 +18,7 @@ class PostsController < ApplicationController
 
     if @post.save
       redirect_to user_path(id: @post.author_id)
+      flash[:notice] = 'You post was successfully created'
     else
       render :new, alert: 'An error has occurred while creating the post'
     end
