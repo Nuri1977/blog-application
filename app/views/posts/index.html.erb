@@ -31,7 +31,7 @@
           <div class="commets-container">
             <h4>Comments:</h4>
             <ul>
-              <% post.recent_comments.each do |comment| %>
+              <% post.recent_comments.includes(:author).each do |comment| %>
                 <p><%= comment.author.name %>: <%= comment.text %></p>
               <% end %>
             </ul>
