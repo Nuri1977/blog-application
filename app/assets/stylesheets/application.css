@@ -108,6 +108,11 @@ a {
   border: 1px solid black;
 }
 
+.bg-green {
+  background: #0d7d4d;
+  color: #f1ecea;
+}
+
 .number-posts {
   padding: 10px;
   text-align: right;

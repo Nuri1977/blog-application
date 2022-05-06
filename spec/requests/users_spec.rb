@@ -20,7 +20,8 @@ RSpec.describe 'Users', type: :request do
 
     describe 'GET #show' do
       before(:each) do
-        get '/users/1'
+        user = User.create(name: 'Nuri', bio: 'biography for testing', photo: 'photo link')
+        get user_path(id: user.id)
       end
 
       it 'GET requests response status was correct' do
@@ -32,7 +33,7 @@ RSpec.describe 'Users', type: :request do
       end
 
       it 'renders content correctly' do
-        expect(response.body).to include('Welcome to user show page')
+        expect(response.body).to include('List of recent Posts')
       end
     end
   end
