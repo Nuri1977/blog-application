@@ -9,6 +9,7 @@
       <div class="right">
         <%= link_to "See all users", users_path, class: "btn" %>
         <% if user_signed_in? %>
+          <%= link_to "Account", edit_user_registration_path, class: "btn right" %>
           <%= link_to "Add a post", new_user_post_path(user_id: @user.id), class: "btn right" %>
         <% end %>
       </div>
