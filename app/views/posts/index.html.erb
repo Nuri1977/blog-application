@@ -7,13 +7,7 @@
     </div>
     <div class="user-data border">
       <h1><%= @user.name %></h1>
-      <p class="number-posts">Number of posts: <%= @user.posts_counter %></p>
-      <div class="right">
-        <%= link_to "See all users", users_path, class: "btn" %>
-        <% if user_signed_in? %>
-          <%= link_to "Add a post", new_user_post_path(user_id: @user.id), class: "btn right" %>
-        <% end %>
-      </div>
+      <p class="number-posts">Number of posts: <%= @user.posts_counter %></p>>
     </div>
   </div>
 </section>
@@ -42,6 +36,7 @@
       <% end %>
     <% end %>
   </ul>
+  <%= link_to "See all users", users_path, class: "btn" %>
 </section>
 
 
