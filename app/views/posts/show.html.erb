@@ -24,8 +24,13 @@
   <div class="commets-container">
     <h4>Comments:</h4>
     <ul>
-      <% @post.comments.includes(:author).each do |comment| %>
-        <p><%= comment.author.name %>: <%= comment.text %></p>
+      <% @post.comments.includes(:author).includes(:post).each do |comment| %>
+        <li class="flex justify-between align-center">
+          <p class="p-1"><%= comment.author.name %>: <%= comment.text %></p>
+          <% if can? :destroy, comment %>
+            <%= button_to "Delete comment", user_post_comment_path(user_id: comment.author.id, post_id: comment.post.id, id: comment.id), method: :delete, class: 'btn-del'  %>
+          <% end %>
+        </li>
       <% end %>
     </ul>
   </div>
