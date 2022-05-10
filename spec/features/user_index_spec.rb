@@ -25,7 +25,7 @@ RSpec.describe 'User index page', type: :feature do
   end
 
   it 'When I click on a user, I am redirected to that users show page' do
-    click_on('Number of posts')
+    click_link(@user.id)
     expect(current_path).to eq user_path @user.id
   end
 end

@@ -1,7 +1,7 @@
 <h1 class="users-title">Welcome to Users page</h1>
   <ul>
     <% @users.each do |user|%>
-      <%= link_to user do %>
+      <%= link_to user, id: user.id do %>
         <li class="card flex">
           <div class="user-image border">
             <img src=<%= user.photo %> alt="" width="100%" heigth="100%">
