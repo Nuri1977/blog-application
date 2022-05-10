@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe Like, type: :model do
   describe 'Validations For the Like model' do
     before(:each) do
-      @user = User.create(name: 'Nuri', photo: 'image_link', bio: 'Developer from Macedonia')
+      @user = User.create(name: 'Nuri', photo: 'image_link', bio: 'Developer from Macedonia', email: 'test@email',
+                          password: 'password', confirmed_at: Time.now)
       @post = Post.create(author: @user, title: 'My title', text: 'My text')
       @like = Like.create(author: @user, post_id: @post.id)
     end
