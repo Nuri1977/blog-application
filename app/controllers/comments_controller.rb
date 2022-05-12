@@ -3,7 +3,6 @@ class CommentsController < ApplicationController
   skip_before_action :authenticate_request
   before_action :authenticate_request, only: [:add_comment]
   protect_from_forgery with: :null_session, only: [:add_comment]
-  load_and_authorize_resource
 
   def new
     @comment = Comment.new
