@@ -1,7 +1,5 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: %i[create destroy]
-  skip_before_action :authenticate_request
-  before_action :authenticate_request, only: [:add_comment]
   protect_from_forgery with: :null_session, only: [:add_comment]
 
   def new
