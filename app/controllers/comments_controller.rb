@@ -39,7 +39,7 @@ class CommentsController < ApplicationController
   end
 
   def add_comment
-    comment = Comment.new(author: @curr_user, post_id: params[:post_id], text: params[:text])
+    comment = Comment.new(author: @curr_user, post_id: params[:id], text: params[:text])
 
     respond_to do |format|
       if comment.save
